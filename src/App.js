@@ -6,6 +6,7 @@ import Dashboard from './components/pages/Dashboard'
 import Home from './components/pages/Home'
 import Forum from './components/pages/Forum'
 import Contact from './components/pages/Contact'
+//import PrivateRoute from './components/Utils/PrivateRoute'
 
 function App() {
   return (
