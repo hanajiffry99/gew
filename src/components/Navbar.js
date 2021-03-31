@@ -1,7 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Container, Row, Form, FormControl, Button, NavDropdown} from 'react-bootstrap'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { ImBooks } from 'react-icons/im';
 import './Navbar.css'
 
@@ -26,16 +26,16 @@ function Navbar() {
                 </Row>
                 <Row>
                     <Col className='nav-items'>
-                        <Link to='/home' className='nav-links'>Home</Link>
+                        <NavLink exact activeClassName="active" to='/home' className='nav-links'>Home</NavLink>
                     </Col>
                     <Col className='nav-items'>
-                        <Link to='/dashboard' className='nav-links'>Dashboard</Link>
+                        <NavLink activeClassName="active" to='/dashboard' className='nav-links'>Dashboard</NavLink>
                     </Col>
                     <Col className='nav-items'>
-                        <Link to='/forum' className='nav-links'>Discussion</Link>
+                        <NavLink activeClassName="active" to='/forum' className='nav-links'>Discussion</NavLink>
                     </Col>
                     <Col className='nav-items'>
-                        <Link to='/contact' className='nav-links'>Contact us</Link>
+                        <NavLink activeClassName="active" to='/contact' className='nav-links'>Contact us</NavLink>
                     </Col>
                     <Col >
                         <NavDropdown title={<span className="title">User</span>} id="collasible-nav-dropdown" >
@@ -48,9 +48,9 @@ function Navbar() {
                         </NavDropdown>
                     </Col>
                     <Col>
-                        <Link to='/signin'>
+                        <NavLink activeClassName="active" to='/signin'>
                             <button className='button'>Sign In</button>
-                        </Link>
+                        </NavLink>
                     </Col>
                 </Row>
             </Container>
