@@ -10,18 +10,20 @@ import Contact from './components/pages/Contact'
 
 function App() {
   return (
-    <>
+    <> 
+     
     <Router>
-      <Navbar />
-      <Switch>
-      <Route exact path='/home' component={Home} />
+    <Navbar/>
+    <Switch>
+      <Route path='/' exact component={Home} />
         <Route path='/signin' component={Signin} />
         <Route path='/dashboard' component={Dashboard} />
         <Route path='/forum'  component={Forum}/>
         <Route path='/contact' component={Contact}/>
       </Switch>
-      <Footer />
+      <Footer/>
     </Router>
+    
       </>
   );
 }

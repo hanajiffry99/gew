@@ -92,15 +92,27 @@ function Finally(props) {
     }
 
     const voteUp = (e) => {
-        var newPostArray = [...comments];
+        /*var newPostArray = [...comments];
         ++newPostArray[e].voteCount;
-        setComment(newPostArray);
+        setComment(newPostArray);*/
+
+        this.setState(
+            {
+                count:this.state.count+1
+            }
+        )
     }
 
     const downVote = (e) => {
-        var newPostArray = [...comments];
+       /* var newPostArray = [...comments];
         --newPostArray[e].voteCount;
-        setComment(newPostArray);
+        setComment(newPostArray);*/
+
+        this.setState(
+            {
+                count:this.state.count-1
+            }
+        )
     }
 
     const handelSubmitInputChange = (e) => {

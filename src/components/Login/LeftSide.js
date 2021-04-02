@@ -14,7 +14,7 @@ const LeftSide = () => {
                     <div className="head">
                     <Row>
                         <Col>
-                        <NavLink exact active activeClassName="active" to="/signnin/login" >Login</NavLink>
+                        <NavLink exact active activeClassName="active" to="/signin" >Login</NavLink>
                         </Col>
                         <Col>
                         <NavLink activeClassName="active" to="/signin/signup">Sign Up</NavLink>
@@ -22,8 +22,8 @@ const LeftSide = () => {
                     </Row>
                     </div>
                     <Switch>
-                        <Route exact path="/signnin/login" component={Login} />
-                        <Route exact path="/signin/signup" component={Signup} />
+                        <Route path="/signin" exact component={Login} />
+                        <Route path="/signin/signup" component={Signup} />
                     </Switch>
                 </Router>
             </Container>

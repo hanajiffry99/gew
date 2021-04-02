@@ -6,7 +6,13 @@
     margin-left:10rem;
     margin-top :10px;
     color: #fff;
-  }
+}
+
+.navbar-logo:hover
+{
+  text-decoration: none;
+  color:darkgrey;
+}
 
   .header
   {
@@ -35,7 +41,7 @@
   .nav-links:hover
   {
     text-decoration: none;
-    color:#29648A;
+    color:darkgrey;
   }
 
   .button

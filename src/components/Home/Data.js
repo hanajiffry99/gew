@@ -22,7 +22,7 @@ export const home_02=
   description:
     'Get Access to a vast hub of Tutorials and Pastpapers,Be an expert with frequent practise ',
   imgStart: '',
-  img: './assets/papers.jpg',
+  img: '../assets/papers.jpg',
   
 };
 

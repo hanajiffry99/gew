@@ -1,6 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Col, Container, Row, Form, FormControl, Button, NavDropdown} from 'react-bootstrap'
+import { Col, Container, Row, Form, FormControl, Button, NavDropdown } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom';
 import { ImBooks } from 'react-icons/im';
 import './Navbar.css'
@@ -12,10 +12,10 @@ function Navbar() {
             <Container fluid style={{ backgroundColor: 'rgb(0,115,207)', height: '150px', position: 'sticky-top', marginTop: '0.5rem' }}>
                 <Row >
                     <Col xs lg="6">
-                        <div className='navbar-logo'>
+                        <NavLink to='/' className='navbar-logo'>
                             <ImBooks style={{ width: '40px', height: '40px', marginRight: '1rem' }} />
                             <span className='header' >AlViN EDU-Master</span>
-                        </div>
+                        </NavLink>
                     </Col>
                     <Col xs lg='2.5'>
                         <Form inline style={{ marginTop: '25px' }}>
@@ -26,7 +26,7 @@ function Navbar() {
                 </Row>
                 <Row>
                     <Col className='nav-items'>
-                        <NavLink exact activeClassName="active" to='/home' className='nav-links'>Home</NavLink>
+                        <NavLink exact activeClassName="active" to='/' className='nav-links'>Home</NavLink>
                     </Col>
                     <Col className='nav-items'>
                         <NavLink activeClassName="active" to='/dashboard' className='nav-links'>Dashboard</NavLink>
@@ -54,6 +54,7 @@ function Navbar() {
                     </Col>
                 </Row>
             </Container>
+
 
         </>
     );

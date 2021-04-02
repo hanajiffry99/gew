@@ -9,7 +9,6 @@
 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
-  
     transition: 0.3s;
     width:75%;
     border-left:20px;
@@ -34,7 +33,7 @@
 .head 
 {
     padding: 10px;
-    background: #edf2f4;
+    background-color: darkgrey;
     border-bottom: 1px solid #999;
     text-align: center;
 }
