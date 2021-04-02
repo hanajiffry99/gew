@@ -14,7 +14,7 @@ class Forms extends React.Component
    render()
    {
     return ( 
-        <Container style={{ position: 'sticky-top', marginTop: '2rem' }}>
+        <Container style={{ position: 'sticky-top', marginTop: '2rem',marginLeft:'340px'}}>
             <Form style={{ width: "50%", marginTop: "10%", marginLeft: "10%" }}>
             <Form.Group>
                 <Form.Label id='email'>Email</Form.Label>
