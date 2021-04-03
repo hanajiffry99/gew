@@ -1,9 +1,11 @@
 import React,{useState} from 'react'
-import Finally from '../Posts/Finally'
+import Discussion from '../Posts/Discussion';
 
 const users = ['Hitesh', 'Jon Doe', 'Lorem Itsum', 'Bunny', 'Kim'];
 
 function Forum() {
+
+    <div>Discussion forum</div>
     const [post, setPost] = useState([{
         postedByUser: 'Hitesh',
         timeStamp: Date.now(),
@@ -53,11 +55,13 @@ function Forum() {
     return (
         <>
             <div className="container text-center mt-5">
-                <form className="jumbotron" onSubmit={handelChanges}>
-                    <input className="form-control" name="mainContent" placeholder="Create new discussion" onChange={handelInputChange} value={inputText} required autoComplete="off" />
-                </form>
+            <form className="jumbotron" onSubmit={handelChanges}>
+                    <input className="form-control" name="mainContent" 
+                    placeholder="Create new discussion" onChange={handelInputChange} value={inputText} required autoComplete="off" />
+            </form>
+                
                 {post.map((post, key) => {
-                    return (<Finally data={post} voteUp={() => voteUp(key)} downVote={() => downVote(key)} />)
+                    return (<Discussion data={post} voteUp={() => voteUp(key)} downVote={() => downVote(key)} />)
                 })}
             </div>
         </>

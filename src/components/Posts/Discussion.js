@@ -1,22 +1,24 @@
 import React, { useState } from 'react'
 import Time from './Time'
 import {IoIosArrowDropupCircle,IoIosArrowDropdownCircle} from 'react-icons/io'
+import {Form} from 'react-bootstrap';
 
 const users = ['Hitesh', 'Jon Doe', 'Lorem Itsum', 'Bunny', 'Kim'];
 
+//replying to comment 
 const ReplyInput = (props) => {
     return (
         <div>
-            <form onSubmit={props.handelSubmitInputChange}>
-                <input name={props.postId} className="form-control mt-2 my-2" placeholder="Enter your reply" onChange={props.handelReplyInputChange} required />
+             <form onSubmit={props.handelSubmitInputChange}>
+                <input name={props.postId}   className="form-control mt-2 my-2" placeholder="Enter your reply" onChange={props.handelReplyInputChange} required />
             </form>
+           
         </div>
     )
 }
 
-
-
 function Comments(props) {
+
     const [showInput, setInput] = useState(false);
     const [commentInp, setCommentInput] = useState('');
     const [comments, setComment] = useState([]);
@@ -28,12 +30,13 @@ function Comments(props) {
 
     const handelSubmitInputChange = (e) => {
         e.preventDefault();
-        let user = users[Math.floor(Math.random() * 4)];
+        let user = users;//[Math.floor(Math.random() * 4)];
 
+        //updating comment details
         let commentDetails = {
             postedByUser: user,
             timeStamp: Date.now(),
-            commentId: user + Math.floor(Math.random() * 1000),
+            commentId: user ,//+ Math.floor(Math.random() * 1000),
             content: commentInp,
             voteCount: 0
         }
@@ -60,7 +63,7 @@ function Comments(props) {
     }
 
     return (
-        <div className="text-left card-div">
+        <div>
             <Time postedByUser={props.data.postedByUser} timeStamp={props.data.timeStamp} />
             <p className="content"> {props.data.content} </p>
             <div>
@@ -81,7 +84,7 @@ function Comments(props) {
     )
 }
 
-function Finally(props) {
+function Discussion(props) {
     const [showInput, setInput] = useState(false);
     const [commentInp, setCommentInput] = useState('');
     const [comments, setComment] = useState([]);
@@ -92,27 +95,15 @@ function Finally(props) {
     }
 
     const voteUp = (e) => {
-        /*var newPostArray = [...comments];
+        var newPostArray = [...comments];
         ++newPostArray[e].voteCount;
-        setComment(newPostArray);*/
-
-        this.setState(
-            {
-                count:this.state.count+1
-            }
-        )
+        setComment(newPostArray);
     }
 
     const downVote = (e) => {
-       /* var newPostArray = [...comments];
+        var newPostArray = [...comments];
         --newPostArray[e].voteCount;
-        setComment(newPostArray);*/
-
-        this.setState(
-            {
-                count:this.state.count-1
-            }
-        )
+        setComment(newPostArray);
     }
 
     const handelSubmitInputChange = (e) => {
@@ -157,4 +148,4 @@ function Finally(props) {
     )
 }
 
-export default Finally
+export default Discussion

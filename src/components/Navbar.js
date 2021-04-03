@@ -34,22 +34,22 @@ function Navbar() {
                     <Col className='nav-items'>
                         <NavLink activeClassName="active" to='/forum' className='nav-links'>Discussion</NavLink>
                     </Col>
-                    <Col className='nav-items'>
-                        <NavLink activeClassName="active" to='/contact' className='nav-links'>Contact us</NavLink>
-                    </Col>
-                    <Col >
-                        <NavDropdown title={<span className="title">User</span>} id="collasible-nav-dropdown" >
-                            <NavDropdown.Item href="#action/3.2">Profile</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Grade</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.4">Messages</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.5">Preferences</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.6">Log out</NavDropdown.Item>
-                        </NavDropdown>
+                    <Col className='nav-items' xs lg='4'>
+                        <NavLink activeClassName="active" to='/contact' className='nav-links'>Admin Panel</NavLink>
                     </Col>
                     <Col>
                         <NavLink activeClassName="active" to='/signin'>
                             <button className='button'>Sign In</button>
+                        </NavLink>
+                    </Col>
+                    <Col>
+                        <NavLink activeClassName="active" to='/signup'>
+                            <button className='button'>Register</button>
+                        </NavLink>
+                    </Col>
+                    <Col>
+                        <NavLink activeClassName="active" to='/logout'>
+                            <button className='button'>Log Out</button>
                         </NavLink>
                     </Col>
                 </Row>
