@@ -24,8 +24,8 @@ function Sections({
             <Col>
               <img src={img} 
                 style={{
-                  width: '400px', paddingRight: '0px',
-                  height: '400px', margin: '0px 0px 20px 10px'
+                  width: '500px', paddingRight: '10px',
+                  height: '400px', margin: '5px 10px 20px 10px'
                 }} />
             </Col>
             <Col>

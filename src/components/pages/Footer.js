@@ -21,23 +21,24 @@ function Footer() {
                         <small className='website-rights'>AlViN EDU-Master © 2021</small>
                     </Col>
                 </Row>
+                <br/>
                 <Row>
-                <Col  md="auto">
+                <Col style={{marginLeft:'42rem'}} md='auto'>
                         <Link className='social-icon-link' to='/' target='_blank' aria-label='Facebook'>
                             <FaFacebook />
                         </Link>
                     </Col>
-                    <Col  md="auto">
+                    <Col  md='auto'>
                         <Link className='social-icon-link' to='/' target='_blank' aria-label='Instagram'>
                             <FaInstagram />
                         </Link>
                     </Col>
-                    <Col  md="auto">
+                    <Col  md='auto'>
                         <Link className='social-icon-link' to='/' target='_blank' aria-label='Twitter' >
                             <FaTwitter />
                         </Link>
                     </Col>
-                    <Col  md="auto">
+                    <Col  md='auto'>
                         <Link
                             className='social-icon-link' to='/' target='_blank' aria-label='LinkedIn'>
                             <FaLinkedin />

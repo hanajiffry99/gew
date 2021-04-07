@@ -10,7 +10,7 @@ const ReplyInput = (props) => {
     return (
         <div><br/>
             <Container>
-                <form onSubmit={props.handelSubmitInputChange}>
+                <form onSubmit={props.handelSubmitInputChange}  >
                     <input 
                     name={props.postId}  
                     placeholder="   Enter your reply" 
@@ -58,7 +58,7 @@ function Comments(props) {
     return (
         <div className="reply">
             <Time timeStamp={props.data.timeStamp} /><br/>
-            <Container style={{fontFamily:'Tahoma',border:'blue'}}>{props.data.content}</Container> 
+            <p style={{fontFamily:'Tahoma',color:'#5375E2'}}>{props.data.content}</p> 
             <div>
                 <Counter /><br />
                 <span style={{ fontWeight: 'bold', color: 'skyblue', marginLeft: '20px' }} onClick={() => setInput(!showInput)} >Reply</span>
@@ -109,7 +109,7 @@ function Discussion(props) {
     return (
         <div className="reply">
             <Time timeStamp={props.data.timeStamp} /><br/>
-            <p style={{fontFamily:'Tahoma'}}> {props.data.content} </p>
+            <p style={{fontFamily:'Tahoma',color:'#5375E2'}}> {props.data.content} </p>
             <div>
                 <Counter /><br />
                 <span style={{ fontWeight: 'bold', color: 'skyblue', marginLeft: '20px' }} onClick={() => setInput(!showInput)} >Reply</span>
