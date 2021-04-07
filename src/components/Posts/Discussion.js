@@ -1,17 +1,24 @@
 import React, { useState } from 'react'
 import Time from './Time'
 import Counter from './Counter'
+import { Container } from 'react-bootstrap';
+import '../Login/Style.css'
 
-const users = ['Hitesh', 'Jon Doe', 'Lorem Itsum', 'Bunny', 'Kim'];
 
 //replying to comment 
 const ReplyInput = (props) => {
     return (
-        <div>
-             <form onSubmit={props.handelSubmitInputChange}>
-                <input name={props.postId}   className="form-control mt-2 my-2" placeholder="Enter your reply" onChange={props.handelReplyInputChange} required />
-            </form>
-           
+        <div><br/>
+            <Container>
+                <form onSubmit={props.handelSubmitInputChange}>
+                    <input 
+                    name={props.postId}  
+                    placeholder="   Enter your reply" 
+                    onChange={props.handelReplyInputChange} 
+                    style={{height:'80px',width:'100%',borderRadius:'6px',border:'none'}}
+                    required />
+                </form>
+            </Container>
         </div>
     )
 }
@@ -29,13 +36,11 @@ function Comments(props) {
 
     const handelSubmitInputChange = (e) => {
         e.preventDefault();
-        let user = users;//[Math.floor(Math.random() * 4)];
 
         //updating comment details
         let commentDetails = {
-            postedByUser: user,
             timeStamp: Date.now(),
-            commentId: user ,//+ Math.floor(Math.random() * 1000),
+            commentId: Math.floor(Math.random() * 1000),
             content: commentInp,
             voteCount: 0
         }
@@ -51,12 +56,12 @@ function Comments(props) {
 
 
     return (
-        <div>
-            <Time postedByUser={props.data.postedByUser} timeStamp={props.data.timeStamp} />
-            <p className="content"> {props.data.content} </p>
+        <div className="reply">
+            <Time timeStamp={props.data.timeStamp} /><br/>
+            <Container style={{fontFamily:'Tahoma',border:'blue'}}>{props.data.content}</Container> 
             <div>
-                <Counter/>
-                <span className="cursor-pointer" onClick={() => setInput(!showInput)} >reply</span>
+                <Counter /><br />
+                <span style={{ fontWeight: 'bold', color: 'skyblue', marginLeft: '20px' }} onClick={() => setInput(!showInput)} >Reply</span>
                 {showInput ? <ReplyInput postId={props.data.postId} handelReplyInputChange={handelReplyInputChange} handelSubmitInputChange={handelSubmitInputChange} /> : null}
             </div>
             <ul>
@@ -83,12 +88,10 @@ function Discussion(props) {
 
     const handelSubmitInputChange = (e) => {
         e.preventDefault();
-        let user = users[Math.floor(Math.random() * 4)];
 
         let commentDetails = {
-            postedByUser: user,
             timeStamp: Date.now(),
-            commentId: user + Math.floor(Math.random() * 1000),
+            commentId: Math.floor(Math.random() * 1000),
             content: commentInp,
             voteCount: 0
         }
@@ -104,17 +107,17 @@ function Discussion(props) {
 
 
     return (
-        <div className="text-left card-div">
-            <Time postedByUser={props.data.postedByUser} timeStamp={props.data.timeStamp} />
-            <p className="content"> {props.data.content} </p>
+        <div className="reply">
+            <Time timeStamp={props.data.timeStamp} /><br/>
+            <p style={{fontFamily:'Tahoma'}}> {props.data.content} </p>
             <div>
-                <Counter/>
-                <span className="cursor-pointer" onClick={() => setInput(!showInput)} >reply</span>
+                <Counter /><br />
+                <span style={{ fontWeight: 'bold', color: 'skyblue', marginLeft: '20px' }} onClick={() => setInput(!showInput)} >Reply</span>
                 {showInput ? <ReplyInput postId={props.data.postId} handelReplyInputChange={handelReplyInputChange} handelSubmitInputChange={handelSubmitInputChange} /> : null}
             </div>
             <ul>
                 {comments.map((comment, key) => {
-                    return (<Comments data={comment}/>)
+                    return (<Comments data={comment} />)
                 })}
             </ul>
         </div>

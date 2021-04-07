@@ -30,15 +30,35 @@
     font-family:"Source Serif Pro";
 }
 
-.head 
+/*.head 
 {
     padding: 10px;
     background-color: darkgrey;
     border-bottom: 1px solid #999;
     text-align: center;
+}*/
+
+
+.box
+{
+    padding: 80px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    background-color:whitesmoke;
+    text-align: center;
 }
 
-.head a 
+.reply
+{
+    text-align: left;
+    padding: 20px;
+    margin-top:20px;
+    margin-left:40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*.head a 
 {
     color: rgb(90, 77, 77);
     font-size: 20px;
@@ -46,5 +66,5 @@
     text-decoration: none;
     margin-left: 20px;
     margin-right: 5px;
-}
+}*/
   

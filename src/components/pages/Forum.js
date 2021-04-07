@@ -1,30 +1,21 @@
 import React,{useState} from 'react'
 import Discussion from '../Posts/Discussion';
+import '../Login/Style.css'
+import { Button, Container } from 'react-bootstrap';
 
-const users = ['Hitesh', 'Jon Doe', 'Lorem Itsum', 'Bunny', 'Kim'];
 
 function Forum() {
 
-    <div>Discussion forum</div>
-    const [post, setPost] = useState([{
-        postedByUser: 'Hitesh',
-        timeStamp: Date(),
-        postId: 'rxgyuioer',
-        content: 'Hey I am Hitesh',
-        voteCount: 0,
-    }]);
-
-
+    const [post, setPost] = useState([ ]);
     const [inputText, setInput] = useState();
 
     const handelChanges = (e) => {
         e.preventDefault();
 
-        let user = users[Math.floor(Math.random() * 4)];
+        alert("Your Post will be posted now")
         let userDetails = {
-            postedByUser: user,
             timeStamp: Date.now(),
-            postId: user,
+            postId: Math.floor(Math.random() * 1000),
             content: inputText,
             voteCount: 0
         }
@@ -44,16 +35,24 @@ function Forum() {
 
     return (
         <>
-            <div className="container text-center mt-5">
-            <form className="jumbotron" onSubmit={handelChanges}>
-                    <input className="form-control" name="mainContent" 
-                    placeholder="Create new discussion" onChange={handelInputChange} value={inputText} required autoComplete="off" />
+        <Container className='box'>
+            <form  onSubmit={handelChanges}>
+                    <input 
+                    className="form-control" 
+                    name="mainContent" 
+                    placeholder="Create a new discussion" 
+                    onChange={handelInputChange} 
+                    value={inputText} 
+                    required 
+                    autoComplete="off" 
+                    style={{height:'250px'}}/><br/><br/>
+                    <Button  variant="secondary" type='submit' >Post now</Button>
             </form>
                 
                 {post.map((post, key) => {
                     return (<Discussion data={post}  />)
                 })}
-            </div>
+        </Container>  
         </>
     );
 }
