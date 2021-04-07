@@ -8,10 +8,10 @@ function Forum() {
     <div>Discussion forum</div>
     const [post, setPost] = useState([{
         postedByUser: 'Hitesh',
-        timeStamp: Date.now(),
+        timeStamp: Date(),
         postId: 'rxgyuioer',
         content: 'Hey I am Hitesh',
-        voteCount: 1,
+        voteCount: 0,
     }]);
 
 
@@ -24,7 +24,7 @@ function Forum() {
         let userDetails = {
             postedByUser: user,
             timeStamp: Date.now(),
-            postId: user + Math.floor(Math.random() * 1000),
+            postId: user,
             content: inputText,
             voteCount: 0
         }
@@ -40,17 +40,7 @@ function Forum() {
         setInput(e.target.value);
     }
 
-    const voteUp = (e) => {
-        var newPostArray = [...post];
-        ++newPostArray[e].voteCount;
-        setPost(newPostArray);
-    }
-
-    const downVote = (e) => {
-        var newPostArray = [...post];
-        --newPostArray[e].voteCount;
-        setPost(newPostArray);
-    }
+    
 
     return (
         <>
@@ -61,7 +51,7 @@ function Forum() {
             </form>
                 
                 {post.map((post, key) => {
-                    return (<Discussion data={post} voteUp={() => voteUp(key)} downVote={() => downVote(key)} />)
+                    return (<Discussion data={post}  />)
                 })}
             </div>
         </>

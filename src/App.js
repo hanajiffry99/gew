@@ -5,7 +5,7 @@ import Signin from './components/pages/Signin'
 import Dashboard from './components/pages/Dashboard'
 import Home from './components/pages/Home'
 import Forum from './components/pages/Forum'
-import Contact from './components/pages/Contact'
+import Admin from './components/pages/Admin'
 import Register from './components/pages/Register'
 import Logout from './components/pages/Logout'
 //import PrivateRoute from './components/Utils/PrivateRoute'
@@ -23,7 +23,7 @@ function App() {
         <Route path='/dashboard' component={Dashboard} />
         <Route path='/logout' component={Logout} />
         <Route path='/forum'  component={Forum}/>
-        <Route path='/contact' component={Contact}/>
+        <Route path='/admin' component={Admin}/>
       </Switch>
       <Footer/>
     </Router>

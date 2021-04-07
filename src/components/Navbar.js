@@ -35,7 +35,7 @@ function Navbar() {
                         <NavLink activeClassName="active" to='/forum' className='nav-links'>Discussion</NavLink>
                     </Col>
                     <Col className='nav-items' xs lg='4'>
-                        <NavLink activeClassName="active" to='/contact' className='nav-links'>Admin Panel</NavLink>
+                        <NavLink activeClassName="active" to='/admin' className='nav-links'>Admin Panel</NavLink>
                     </Col>
                     <Col>
                         <NavLink activeClassName="active" to='/signin'>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Time from './Time'
-import {IoIosArrowDropupCircle,IoIosArrowDropdownCircle} from 'react-icons/io'
-import {Form} from 'react-bootstrap';
+import Counter from './Counter'
 
 const users = ['Hitesh', 'Jon Doe', 'Lorem Itsum', 'Bunny', 'Kim'];
 
@@ -50,33 +49,20 @@ function Comments(props) {
         console.log(comments);
     }
 
-    const voteUp = (e) => {
-        var newPostArray = [...comments];
-        ++newPostArray[e].voteCount;
-        setComment(newPostArray);
-    }
-
-    const downVote = (e) => {
-        var newPostArray = [...comments];
-        --newPostArray[e].voteCount;
-        setComment(newPostArray);
-    }
 
     return (
         <div>
             <Time postedByUser={props.data.postedByUser} timeStamp={props.data.timeStamp} />
             <p className="content"> {props.data.content} </p>
             <div>
-                {props.data.voteCount}
-                <IoIosArrowDropupCircle width="30px" onClick={props.voteUp} />
-                <IoIosArrowDropdownCircle width="30px" onClick={props.downVote} />
+                <Counter/>
                 <span className="cursor-pointer" onClick={() => setInput(!showInput)} >reply</span>
                 {showInput ? <ReplyInput postId={props.data.postId} handelReplyInputChange={handelReplyInputChange} handelSubmitInputChange={handelSubmitInputChange} /> : null}
             </div>
             <ul>
                 {comments.length > 0 ?
                     comments.map((comment, key) => {
-                        return (<Comments data={comment} voteUp={() => voteUp(key)} downVote={() => downVote(key)} />)
+                        return (<Comments data={comment} />)
                     })
                     : null}
             </ul>
@@ -94,17 +80,6 @@ function Discussion(props) {
         setCommentInput(e.target.value);
     }
 
-    const voteUp = (e) => {
-        var newPostArray = [...comments];
-        ++newPostArray[e].voteCount;
-        setComment(newPostArray);
-    }
-
-    const downVote = (e) => {
-        var newPostArray = [...comments];
-        --newPostArray[e].voteCount;
-        setComment(newPostArray);
-    }
 
     const handelSubmitInputChange = (e) => {
         e.preventDefault();
@@ -133,15 +108,13 @@ function Discussion(props) {
             <Time postedByUser={props.data.postedByUser} timeStamp={props.data.timeStamp} />
             <p className="content"> {props.data.content} </p>
             <div>
-                {props.data.voteCount}
-                <IoIosArrowDropupCircle width="30px" onClick={props.voteUp} />
-                <IoIosArrowDropdownCircle width="30px" onClick={props.downVote} />
+                <Counter/>
                 <span className="cursor-pointer" onClick={() => setInput(!showInput)} >reply</span>
                 {showInput ? <ReplyInput postId={props.data.postId} handelReplyInputChange={handelReplyInputChange} handelSubmitInputChange={handelSubmitInputChange} /> : null}
             </div>
             <ul>
                 {comments.map((comment, key) => {
-                    return (<Comments data={comment} voteUp={() => voteUp(key)} downVote={() => downVote(key)} />)
+                    return (<Comments data={comment}/>)
                 })}
             </ul>
         </div>
